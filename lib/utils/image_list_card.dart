@@ -17,11 +17,11 @@ class ImageListCard extends StatelessWidget {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            CachedNetworkImage(
-              imageUrl: photo.downloadUrl,
+            Image.network(
+              photo.downloadUrl,
               fit: BoxFit.cover,
 
-              errorWidget: (context, url, error) => const Center(
+              errorBuilder: (context, url, error) => const Center(
                 child: Icon(Icons.broken_image_outlined, color: Colors.grey),
               ),
             ),
